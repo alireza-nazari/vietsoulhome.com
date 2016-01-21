@@ -1,4 +1,4 @@
-            <div class="col-md-4">
+            <div class="col-md-4 col-md-push-8">
 
                 <!-- Search Well -->
                 <div class="well">
