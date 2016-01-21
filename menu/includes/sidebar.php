@@ -2,15 +2,18 @@
 
                 <!-- Search Well -->
                 <div class="well">
-                    <h4>Search our Menu</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
-                    </div>
+                    <h4>Search Menu</h4>
+                    <form action="" method="get">
+                        <div class="input-group">
+                            <input name="search" type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button name="searchbtn" class="btn btn-default" type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+                    
                     <!-- /.input-group -->
                 </div>
 
