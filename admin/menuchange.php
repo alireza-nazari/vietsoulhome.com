@@ -148,7 +148,7 @@
                 </div>
             </td>
             <td contenteditable='true' onBlur="saveToDB('products', this, 'product_description', 'product_ID', '<?php echo $row['product_ID'];?>')"><?php echo $row['product_description']; ?></td>
-            <td><img style="width: 18em; height: 18em" src="../images/products/<?php echo $row['product_img']; ?>"><form action="uploadImage.php" enctype="multipart/form-data" method="POST"><div class="form-group"><input type="file" name="image" class="btn btn-sm"><input type="submit" class="btn btn-sm btn-primary pull-right" value="Upload" name="uploadProductImage"></div></form></td>
+            <td><img style="width: 18em; height: 18em" src="../images/products/<?php echo $row['product_img']; ?>"><form action="uploadImage.php" enctype="multipart/form-data" method="POST"><div class="form-group"><?php echo '<input type="hidden" name="product_ID" value="'.$row['product_ID'].'">' ?><input type="file" name="image" class="btn btn-sm"><input type="submit" class="btn btn-sm btn-primary pull-right" value="Upload" name="uploadProductImage"></div></form></td>
             <td contenteditable='true' onBlur="saveToDB('products', this, 'product_price', 'product_ID', '<?php echo $row['product_ID'];?>')"><?php echo $row['product_price']; ?></td>
             <td>
                 <div class="dropup">
