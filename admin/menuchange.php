@@ -107,6 +107,7 @@
                                         <th>Quantity</th>
                                         <th>Category</th>
                                         <th>Description</th>
+                                        <th>Image</th>
                                         <th>Price</th>
                                         <th>Recommended</th>
                                     </tr>
@@ -136,17 +137,18 @@
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="catmenu">
-    <?php
-        $dropdown_query = "SELECT cat_ID, cat_title FROM categories;";
-        $cat_dropdown_query = mysqli_query($connection, $dropdown_query);
-        while ($row_dropdown = mysqli_fetch_assoc($cat_dropdown_query)){
-            echo "<li><a href='changeProductCategory.php?product_ID=".$row['product_ID']."&cat_ID=".$row_dropdown['cat_ID']."'>".$row_dropdown['cat_title']."</li>";
-        }
-    ?>
+<?php
+    $dropdown_query = "SELECT cat_ID, cat_title FROM categories;";
+    $cat_dropdown_query = mysqli_query($connection, $dropdown_query);
+    while ($row_dropdown = mysqli_fetch_assoc($cat_dropdown_query)){
+        echo "<li><a href='changeProductCategory.php?product_ID=".$row['product_ID']."&cat_ID=".$row_dropdown['cat_ID']."'>".$row_dropdown['cat_title']."</li>";
+    }
+?>
                   </ul>
                 </div>
             </td>
             <td contenteditable='true' onBlur="saveToDB('products', this, 'product_description', 'product_ID', '<?php echo $row['product_ID'];?>')"><?php echo $row['product_description']; ?></td>
+            <td><img style="width: 18em; height: 18em" src="../images/products/<?php echo $row['product_img']; ?>"><form action="uploadImage.php" enctype="multipart/form-data" method="POST"><div class="form-group"><input type="file" name="image" class="btn btn-sm"><input type="submit" class="btn btn-sm btn-primary pull-right" value="Upload" name="uploadProductImage"></div></form></td>
             <td contenteditable='true' onBlur="saveToDB('products', this, 'product_price', 'product_ID', '<?php echo $row['product_ID'];?>')"><?php echo $row['product_price']; ?></td>
             <td>
                 <div class="dropup">
