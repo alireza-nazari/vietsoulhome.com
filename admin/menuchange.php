@@ -11,13 +11,12 @@
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Menu Control
-                            <small>Alter the Menu</small>
-                        </h1>
+                    <h1 class="page-header">
+                        Menu Control
+                        <small>Alter the Menu</small>
+                    </h1>
 
-                        <div> <!-- Category table -->
+                        <div class="col-lg-12"> <!-- Category table -->
 <script type="text/javascript">
     function saveToDB(table, editableObj, column, id_column, id) {
         $(editableObj).css('background', '#FFF url(../images/ajax-loader.gif) no-repeat right');
@@ -34,7 +33,7 @@
                             <h3 class="page-header">Category Table</h3>
                             <table class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr class="success">
                                         <th>ID</th>
                                         <th>Title</th>
                                         <th>Short Description</th>
@@ -96,11 +95,11 @@
 ?>
                         </div> <!-- /.Category table -->
                         <hr>
-                        <div> <!-- Product table -->
+                        <div class="col-lg-12 table-responsive"> <!-- Product table -->
                             <h3 class="page-header">Product Table</h3>
                             <table class="table table-bordered table-striped">
                                 <thead>
-                                    <tr>
+                                    <tr class="success">
                                         <th>ID</th>
                                         <th>Name</th>
                                         <th>Vietnamese</th>
@@ -148,7 +147,20 @@
                 </div>
             </td>
             <td contenteditable='true' onBlur="saveToDB('products', this, 'product_description', 'product_ID', '<?php echo $row['product_ID'];?>')"><?php echo $row['product_description']; ?></td>
-            <td><img style="width: 18em; height: 18em" src="../images/products/<?php echo $row['product_img']; ?>"><form action="uploadImage.php" enctype="multipart/form-data" method="POST"><div class="form-group"><?php echo '<input type="hidden" name="product_ID" value="'.$row['product_ID'].'">' ?><input type="file" name="image" class="btn btn-sm"><input type="submit" class="btn btn-sm btn-primary pull-right" value="Upload" name="uploadProductImage"></div></form></td>
+            <td>
+                <div class="col-lg-4">
+                    <img class="img-responsive" style="width: 15em; height: 10em" src="../images/products/<?php echo $row['product_img']; ?>">
+                </div>
+                <div class="col-lg-8" style="padding-top: 1em">
+                    <form action="uploadImage.php" enctype="multipart/form-data" method="POST">
+                        <div class="form-group">
+                            <?php echo '<input type="hidden" name="product_ID" value="'.$row['product_ID'].'">' ?>
+                            <input type="file" name="image">
+                            <input type="submit" class="btn btn-sm btn-primary pull-right" value="Upload" name="uploadProductImage">
+                        </div>
+                    </form>
+                </div>
+            </td>
             <td contenteditable='true' onBlur="saveToDB('products', this, 'product_price', 'product_ID', '<?php echo $row['product_ID'];?>')"><?php echo $row['product_price']; ?></td>
             <td>
                 <div class="dropup">
@@ -192,8 +204,7 @@
         header('location:menuchange.php');
     }
 ?>
-                        </div>
-                    </div>
+                        </div><!-- /.Product table -->
 
                 </div>
                 <!-- /.row -->
