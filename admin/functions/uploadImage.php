@@ -18,6 +18,9 @@
 		$query = "UPDATE products SET product_img = '' WHERE product_ID = ".$_POST['product_ID'].";";
 		$result = mysqli_query($connection, $query);
 		if ($result)
-			header("location:../menuchange.php");
+			if (file_exists("../../images/products/$product_image")){
+				unlink("../../images/products/$product_image");
+				header("location:../menuchange.php");
+			}
 	}
 ?>

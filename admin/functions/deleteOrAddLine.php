@@ -17,7 +17,7 @@
         header('location:../menuchange.php');
     }
 
-    // Add and Delete row in product
+    // Add and Delete row in products
     if(isset($_GET['add_product'])){
         $query = "INSERT INTO products (cat_ID) VALUES (1);";
         mysqli_query($connection, $query);
