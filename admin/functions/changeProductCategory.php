@@ -1,5 +1,5 @@
 <?php
-	include "includes/a_header.php";
+	include "../../includes/connection.php";
 	if (isset($_GET['product_ID'])){
 		$_GET['cat_ID'] = intval($_GET['cat_ID']);
 		$_GET['product_ID'] = intval($_GET['product_ID']);
@@ -9,7 +9,7 @@
 			die(mysqli_error($connection));
 		}
 		else {
-			header('location:menuchange.php');
+			header('location:../menuchange.php');
 		}
 		
 	}
