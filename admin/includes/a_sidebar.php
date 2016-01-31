@@ -7,10 +7,10 @@
                         <a href="menuchange.php"><i class="fa fa-fw fa-book"></i> Menu Control</a>
                     </li>
                     <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                        <a href="user.php"><i class="fa fa-fw fa-users"></i> Users</a>
                     </li>
                     <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                        <a href="order.php"><i class="fa fa-fw fa-database"></i> Orders</a>
                     </li>
                     <li>
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
