@@ -43,7 +43,19 @@
         echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_lastname', '{$row['user_ID']}')".';"'.">{$row['user_lastname']}</td>";
         echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_phone_no', '{$row['user_ID']}')".';"'.">{$row['user_phone_no']}</td>";
         echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_email', '{$row['user_ID']}')".';"'.">{$row['user_email']}</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_role', '{$row['user_ID']}')".';"'.">{$row['user_role']}</td>";
+
+        // Query to output options for user_role
+        $query = "SELECT * FROM user_roles WHERE user_role_ID = {$row['user_role']};";
+        $user_role_query = mysqli_query($connection, $query);
+        $find_user_role = mysqli_fetch_assoc($user_role_query);
+        echo '<td><div class="dropup"><button class="btn btn-default dropdown-toggle" type="button" id="user_role" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'.$find_user_role['user_role'].' <span class="caret"></span></button>';
+        echo '<ul class="dropdown-menu" aria-labelledby="user_role">';
+        $query = "SELECT * FROM user_roles;";
+        $user_role_query = mysqli_query($connection, $query);
+        while ($row_dropdown = mysqli_fetch_assoc($user_role_query)){
+            echo "<li><a href='functions/changeUserRole.php?user_ID={$row['user_ID']}&role_ID={$row_dropdown['user_role_ID']}'>{$row_dropdown['user_role']}</li>";
+        }
+        echo "</ul></div></td>";        
         echo "</tr>";
     }
 ?>
