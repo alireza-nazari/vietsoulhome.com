@@ -38,12 +38,12 @@
     $user_query = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($user_query)){
         echo "<tr>";
-        echo "<td>".$row['user_ID']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_firstname', '".$row['user_ID']."')".';"'.">".$row['user_firstname']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_lastname', '".$row['user_ID']."')".';"'.">".$row['user_lastname']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_phone_no', '".$row['user_ID']."')".';"'.">".$row['user_phone_no']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_email', '".$row['user_ID']."')".';"'.">".$row['user_email']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_role', '".$row['user_ID']."')".';"'.">".$row['user_role']."</td>";
+        echo "<td>{$row['user_ID']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_firstname', '{$row['user_ID']}')".';"'.">{$row['user_firstname']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_lastname', '{$row['user_ID']}')".';"'.">{$row['user_lastname']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_phone_no', '{$row['user_ID']}')".';"'.">{$row['user_phone_no']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_email', '{$row['user_ID']}')".';"'.">{$row['user_email']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveUserChanges(this, 'user_role', '{$row['user_ID']}')".';"'.">{$row['user_role']}</td>";
         echo "</tr>";
     }
 ?>

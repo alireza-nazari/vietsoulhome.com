@@ -34,10 +34,10 @@
     $cat_query = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($cat_query)){
         echo "<tr>";
-        echo "<td>".$row['cat_ID']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveCatChanges(this, 'cat_title', '".$row['cat_ID']."')".';"'.">".$row['cat_title']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveCatChanges(this, 'cat_short_hint', '".$row['cat_ID']."')".';"'.">".$row['cat_short_hint']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveCatChanges(this, 'cat_description', '".$row['cat_ID']."')".';"'.">".$row['cat_description']."</td>";
+        echo "<td>{$row['cat_ID']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveCatChanges(this, 'cat_title', '{$row['cat_ID']}')".';"'.">{$row['cat_title']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveCatChanges(this, 'cat_short_hint', '{$row['cat_ID']}')".';"'.">{$row['cat_short_hint']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveCatChanges(this, 'cat_description', '{$row['cat_ID']}')".';"'.">{$row['cat_description']}</td>";
         echo "</tr>";
     }
 ?>
@@ -73,10 +73,10 @@
     $product_query = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($product_query)){
         echo "<tr>";
-        echo "<td>".$row['product_ID']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_title', '".$row['product_ID']."')".';"'.">".$row['product_title']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_viet_title', '".$row['product_ID']."')".';"'.">".$row['product_viet_title']."</td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_quantity', '".$row['product_ID']."')".';"'.">".$row['product_quantity']."</td>";
+        echo "<td>{$row['product_ID']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_title', '{$row['product_ID']}')".';"'.">{$row['product_title']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_viet_title', '{$row['product_ID']}')".';"'.">{$row['product_viet_title']}</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_quantity', '{$row['product_ID']}')".';"'.">{$row['product_quantity']}</td>";
         $query = "SELECT cat_title FROM categories WHERE cat_ID = {$row['cat_ID']};";
         $cat_title_query = mysqli_query($connection, $query);
         $find_cat_title = mysqli_fetch_assoc($cat_title_query);
@@ -85,10 +85,10 @@
         $dropdown_query = "SELECT cat_ID, cat_title FROM categories;";
         $cat_dropdown_query = mysqli_query($connection, $dropdown_query);
         while ($row_dropdown = mysqli_fetch_assoc($cat_dropdown_query)){
-            echo "<li><a href='functions/changeProductCategory.php?product_ID=".$row['product_ID']."&cat_ID=".$row_dropdown['cat_ID']."'>".$row_dropdown['cat_title']."</li>";
+            echo "<li><a href='functions/changeProductCategory.php?product_ID={$row['product_ID']}&cat_ID={$row_dropdown['cat_ID']}'>{$row_dropdown['cat_title']}</li>";
         }
         echo "</ul></div></td>";
-        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_description', '".$row['product_ID']."')".';"'.">".$row['product_description']."</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_description', '{$row['product_ID']}')".';"'.">{$row['product_description']}</td>";
         echo '<td>';
         if ($row['product_img'])
             echo '<div><img class="img-responsive" style="width: 15em; height: 10em" src="../images/products/'.$row['product_img'].'"></div>';
@@ -101,7 +101,7 @@
             echo '<input type="submit" class="btn btn-sm btn-danger pull-left" value="Delete" name="deleteProductImage">';
         echo '<input type="submit" class="btn btn-sm btn-primary pull-right" value="Upload" name="uploadProductImage">';
         echo '</div></form></div></td>';
-        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_price', '".$row['product_ID']."')".';"'.">".$row['product_price']."</td>";
+        echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_price', '{$row['product_ID']}')".';"'.">{$row['product_price']}</td>";
 ?>
             <td>
                 <div class="dropup">
