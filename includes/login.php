@@ -24,7 +24,7 @@
 			$_SESSION['email'] = $email;
 			$_SESSION['firstname'] = $row['user_firstname'];
 			$_SESSION['lastname'] = $row['user_lastname'];
-			$_SESSION['email'] = $row['user_email'];
+			$_SESSION['phone'] = $row['user_phone_no'];
 			$_SESSION['img'] = $row['user_img'];
 			$_SESSION['role'] = $row['user_role'];
 			switch ($role) {

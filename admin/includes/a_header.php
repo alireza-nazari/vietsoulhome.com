@@ -1,9 +1,11 @@
 <?php ob_start(); include "../includes/connection.php"; ?>
 <?php
     session_start();
-    if (isset($_SESSION['role']))
+    if (isset($_SESSION['role'])){
         if($_SESSION['role'] != 1)
             header("location: ../");
+    }
+    else header("location: ../");
 ?>
 <!DOCTYPE html>
 <html lang="en">
