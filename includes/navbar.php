@@ -48,9 +48,9 @@
             <!-- Sign In Form -->
             <!-- Text input-->
             <div class="control-group">
-              <label class="control-label" for="phone_no">Phone Number:</label>
+              <label class="control-label" for="email">Email:</label>
               <div class="controls">
-                <input required name="phone_no" type="tel" class="form-control" placeholder="(800) 000-0000" class="input-medium" required="">
+                <input required name="email" type="email" class="form-control" class="input-medium" required="">
               </div>
             </div>
 
@@ -80,21 +80,21 @@
             <div class="control-group">
               <label class="control-label" for="fname">First name:</label>
               <div class="controls">
-                <input id="fname" name="fname" class="form-control" type="text" placeholder="Taylor" class="input-large" required="">
+                <input id="fname" name="fname" class="form-control" type="text" class="input-large" required="">
               </div>
             </div>
             <!-- Text input-->
             <div class="control-group">
               <label class="control-label" for="lname">Last name:</label>
               <div class="controls">
-                <input id="lname" name="lname" class="form-control" type="text" placeholder="Swift" class="input-large" required="">
+                <input id="lname" name="lname" class="form-control" type="text" class="input-large" required="">
               </div>
             </div>
             <!-- Text input-->
             <div class="control-group">
               <label class="control-label" for="email">Email:</label>
               <div class="controls">
-                <input id="email" name="email" class="form-control" type="email" placeholder="abcdef@gmail.com" class="input-large" required="">
+                <input id="email" name="email" class="form-control" type="email" class="input-large" required="">
               </div>
             </div>
             <!-- Password input-->
@@ -124,7 +124,7 @@
             <div class="control-group">
               <label class="control-label" for="phone">Phone:</label>
               <div class="controls">
-                <input id="phone" class="form-control phone" name="phone" type="tel" placeholder="(800) 000-0000" class="input-large">
+                <input id="phone" class="form-control phone" name="phone" type="tel" placeholder="(800) 000-0000" class="input-large" required>
               </div>
             </div>
             <!-- Button -->
