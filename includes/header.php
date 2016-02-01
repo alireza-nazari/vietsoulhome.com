@@ -1,5 +1,3 @@
-<?php include_once "includes/connection.php"; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +6,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Vietnamese Restaurant Homepage in Richmond, TX">
+    <meta name="description" content="VietSoul Restaurant Homepage in Richmond, TX">
     <meta name="author" content="DucTruong">
+    <meta name="author" content="Vietsoul Restaurant">
 
     <title>VietSoul Restaurant</title>
 
