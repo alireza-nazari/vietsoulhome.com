@@ -51,15 +51,17 @@
 
 <!-- Two -->
 <section id="two" class="spotlight style2 right">
-	<span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+	<span class="image fit main"><img src="images/vietsoul-front.jpg" alt="" /></span>
 	<div class="content">
 		<header>
-			<h2>Interdum amet non magna accumsan</h2>
-			<p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
+			<h2>Our restaurant</h2>
+			<p>We are a family-owned business</p>
 		</header>
-		<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+		<p>We are very happy to present you our traditional, homemade style of cooking.
+		We believe that all food should be served within the day it is cooked; and with our
+		fresh ingredients, we hope to bring you the best experience to Vietnamese cuisine.</p>
 		<ul class="actions">
-			<li><a href="#" class="button">Learn More</a></li>
+			<li><a href="about/" class="button">Learn More About Us</a></li>
 		</ul>
 	</div>
 	<a href="#three" class="goto-next scrolly">Next</a>
@@ -70,12 +72,14 @@
 	<span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
 	<div class="content">
 		<header>
-			<h2>Interdum felis blandit praesent sed augue</h2>
-			<p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
+			<h2>Our products</h2>
+			<p>We present you the most famous Vietnamese dishes with our exceptional recipe</p>
 		</header>
-		<p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+		<p>We exclusively choose out most famous, healthiest and newcomer-friendly dishes to get
+		you started with Vietnamese cuisine.</p>
+		<p>We take pride in our products.</p>
 		<ul class="actions">
-			<li><a href="#" class="button">Learn More</a></li>
+			<li><a href="menu/" class="button">Take a Look at Our Menu</a></li>
 		</ul>
 	</div>
 	<a href="#four" class="goto-next scrolly">Next</a>
@@ -85,62 +89,64 @@
 <section id="four" class="wrapper style1 special fade-up">
 	<div class="container">
 		<header class="major">
-			<h2>Accumsan sed tempus adipiscing blandit</h2>
-			<p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+			<h2>Our Services</h2>
+			<p>We offer Online ordering for your convinience as well as improving our service overall</p>
 		</header>
 		<div class="box alt">
 			<div class="row uniform">
 				<section class="4u 6u(medium) 12u$(xsmall)">
-					<span class="icon alt major fa-area-chart"></span>
-					<h3>Ipsum sed commodo</h3>
-					<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+					<span class="icon alt major fa-fighter-jet"></span>
+					<h3>Exceptional service</h3>
+					<p>We hold true to the qoute <em>"Customer is God"</em> with all our hearts.</p>
 				</section>
 				<section class="4u 6u$(medium) 12u$(xsmall)">
-					<span class="icon alt major fa-comment"></span>
-					<h3>Eleifend lorem ornare</h3>
-					<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+					<span class="icon alt major fa-cutlery"></span>
+					<h3>Excellent products</h3>
+					<p>All our food is daily-cooked and extremely healthy.</p>
 				</section>
 				<section class="4u$ 6u(medium) 12u$(xsmall)">
-					<span class="icon alt major fa-flask"></span>
-					<h3>Cubilia cep lobortis</h3>
-					<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+					<span class="icon alt major fa-coffee"></span>
+					<h3>Exclusive dinning atmosphere</h3>
+					<p>Take your experience to the next level.</p>
 				</section>
 				<section class="4u 6u$(medium) 12u$(xsmall)">
-					<span class="icon alt major fa-paper-plane"></span>
-					<h3>Non semper interdum</h3>
-					<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+					<span class="icon alt major fa-wifi"></span>
+					<h3>Enjoy your meal</h3>
+					<p>Free wifi and cozy atmosphere to make you feel like home.</p>
 				</section>
 				<section class="4u 6u(medium) 12u$(xsmall)">
-					<span class="icon alt major fa-file"></span>
-					<h3>Odio laoreet accumsan</h3>
-					<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+					<span class="icon alt major fa-shopping-cart"></span>
+					<h3>Online Ordering</h3>
+					<p>Fully customizable your order online.</p>
 				</section>
 				<section class="4u$ 6u$(medium) 12u$(xsmall)">
-					<span class="icon alt major fa-lock"></span>
-					<h3>Massa arcu accumsan</h3>
-					<p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+					<span class="icon alt major fa-money"></span>
+					<h3>Online Payment</h3>
+					<p>Walk-in and walk-out the restaurant <strong>FAST</strong>.</p>
 				</section>
 			</div>
 		</div>
 		<footer class="major">
 			<ul class="actions">
-				<li><a href="#" class="button">Magna sed feugiat</a></li>
+				<li><a href="registration/" class="button special">SignUp and LogIn to Order Online</a></li>
 			</ul>
 		</footer>
 	</div>
 </section>
 
 <!-- Five -->
-<section id="five" class="wrapper style2 special fade">
+<section id="five" class="wrapper style2 special fade" style="background: #DB3E4E">
 	<div class="container">
 		<header>
-			<h2>Magna faucibus lorem diam</h2>
-			<p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+			<h2>Tell us about it</h2>
+			<p>Have any problems? Leave your comment here to help us to improve our service ...</p>
+			<p>We are appreciated your critique!</p>
 		</header>
 		<form method="post" action="#" class="container 50%">
 			<div class="row uniform 50%">
 				<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-				<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Started" class="fit special" /></div>
+				<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Involved" class="fit special" /></div>
+				<div class="12u$"><textarea rows="4" name="comment" id="comment" placeholder="Your Comment" style="resize: none"></textarea><div>
 			</div>
 		</form>
 	</div>

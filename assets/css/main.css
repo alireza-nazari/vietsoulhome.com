@@ -48,6 +48,9 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	small {
+	  font-size: 75%;
+	}
 /* Box Model */
 
 	*, *:before, *:after {
@@ -1579,12 +1582,12 @@
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #B06F33;
+		color: #E44C65;
 		text-decoration: none;
 	}
 
 		a:hover {
-			color: #B06F33 !important;
+			color: #E44C65 !important;
 			border-bottom-color: transparent;
 		}
 
