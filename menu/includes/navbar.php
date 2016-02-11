@@ -1,4 +1,5 @@
 <!-- Header -->
+<div id="TOPPAGE"></div>
 <header id="header">
     <h1 id="logo"><a href="../">VietSoul</a></h1>
     <nav id="nav">

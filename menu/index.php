@@ -9,12 +9,11 @@
             <div class="container-fluid">
                 <div class="row">
         <!-- Menu Entries Column -->
-                    <div class="1u 12u$(medium)"><br/></div>
-                    <div class="8u 12u$(medium)" id="menuContent"></div>
-  
 <?php include "includes/sidebar.php"; ?>
+                    <div class="9u 12u$(large)" id="menuContent" style="padding: 0 2em 0 5em"></div>
 
                 </div><!-- /.row -->
+<div style="position: fixed; left: 50%; bottom: 1em" class="toTop"><h3><a href="#header" class="icon fa-chevron-up scrolly" style="padding: 0.7em"></a></h3></div>
             </div><!-- /.page content -->
         </div>
     </div><!-- /.page-wrapper -->

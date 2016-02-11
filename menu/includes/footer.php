@@ -54,12 +54,24 @@ $(function (){
     $.ajax({url: "menuDisplay.php", success: function(result){
         $("#menuContent").html(result);
     }});
+    $(document).scroll(function() {
+        if($(document).scrollTop() > 300)
+            $(".toTop").fadeIn();
+        else $(".toTop").fadeOut();
+    });
 });
 
 function display(a){
     $.get("menuDisplay.php", {id: a}, function(result){$("#menuContent").html(result);});
 }
+
+// Searchbtn Clicked
+$("#searchbtn").click(function(){
+    var a = $('[name="search"]').val();
+    $.get("menuDisplay.php", {search: a}, function(result){$("#menuContent").html(result);});
+});
 </script>
+
 <?php mysqli_close($connection); ?>
 
 </body>
