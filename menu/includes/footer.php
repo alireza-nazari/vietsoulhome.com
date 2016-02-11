@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="3u 12u$(medium)">
+            <div class="4u 12u$(medium)">
                 <header>
                     <h3>Location</h3>
                 </header>

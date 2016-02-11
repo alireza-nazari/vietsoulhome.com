@@ -1,10 +1,10 @@
-<?php include "connection.php"; ?>
+<?php include "header.php"; ?>
+<?php include "../includes/connection.php"; ?>
 <?php
 	session_start();
 	if (isset($_POST['login'])){
-		$email = $_POST['email'];
-		$password = $_POST['password'];
-
+		echo $email = $_POST['email'];
+		echo $password = $_POST['password'];
 		// sql-injection prevention
 		$email = mysqli_real_escape_string($connection, $email);
 		$password = mysqli_real_escape_string($connection, $password);

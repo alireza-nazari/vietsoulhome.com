@@ -5,13 +5,13 @@
 
 <body>
 	
-<?php include "nav.php"; ?>
+<?php include "navbar.php"; ?>
 
 <div class="account-container register">
 	
 	<div class="content clearfix">
 		
-		<form action="../includes/signup.php" method="post">
+		<form action="signup.php" method="post">
 		
 			<h1>Signup for Free Account</h1>			
 			

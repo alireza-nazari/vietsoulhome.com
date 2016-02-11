@@ -61,7 +61,7 @@
 		We believe that all food should be served within the day it is cooked; and with our
 		fresh ingredients, we hope to bring you the best experience to Vietnamese cuisine.</p>
 		<ul class="actions">
-			<li><a href="about/" class="button">Learn More About Us</a></li>
+			<li><a href="#four" class="button scrolly">Learn more about Our Services</a></li>
 		</ul>
 	</div>
 	<a href="#three" class="goto-next scrolly">Next</a>

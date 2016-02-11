@@ -1,5 +1,5 @@
 <?php include "header.php"; ?>
-<?php include "connection.php"; ?>
+<?php include "../includes/connection.php"; ?>
 <body>
 <div class="container" style="margin-top: 3em; text-align: center;">
 <?php
