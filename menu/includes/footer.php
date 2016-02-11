@@ -70,6 +70,13 @@ $("#searchbtn").click(function(){
     var a = $('[name="search"]').val();
     $.get("menuDisplay.php", {search: a}, function(result){$("#menuContent").html(result);});
 });
+
+// Searchbtn EnterKey pressed
+$('[name="search"]').keypress(function(a){
+    if(a.keyCode === 13){
+        $('#searchbtn').click();
+    }
+});
 </script>
 
 <?php mysqli_close($connection); ?>
