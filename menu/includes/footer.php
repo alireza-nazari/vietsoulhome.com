@@ -1,4 +1,4 @@
-    <footer id="footer" style="padding-bottom: 2em;">
+    <footer id="footer" style="padding: 2em;">
         <div class="row">
             <div class="4u 12u$(medium)">
                 <header>
@@ -13,13 +13,13 @@
                     </div>
                 </div>
             </div>
-            <div class="4u 12u$(medium)">
+            <div class="3u 12u$(medium)">
                 <header>
                     <h3>Location</h3>
                 </header>
                 <p>7035 W Grand Pkwy S, Richmond, Texas 77407</p>
             </div>
-            <div class="4u 12u$(medium)">
+            <div class="4u$ 12u$(medium)">
                 <header>
                     <h3>Contact</h3>
                     <h4>Visit us at <span style="font-size: 150%">
@@ -48,6 +48,19 @@
 
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="../assets/js/main.js"></script>
+
+<script type="text/javascript">
+$(function (){
+    $.ajax({url: "menuDisplay.php", success: function(result){
+        $("#menuContent").html(result);
+    }});
+});
+
+function display(a){
+    $.get("menuDisplay.php", {id: a}, function(result){$("#menuContent").html(result);});
+}
+</script>
+<?php mysqli_close($connection); ?>
 
 </body>
 </html>

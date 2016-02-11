@@ -6,6 +6,7 @@
 <script type="text/javascript" src="../js/jquery.maskedinput.js"></script>
 <script type="text/javascript" src="../js/validation.js"></script>
 
-</body>
+<?php mysqli_close($connection); ?>
 
- </html>
+</body>
+</html>

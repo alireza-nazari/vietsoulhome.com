@@ -8,11 +8,16 @@
             <li><a href="../contact/">Contact</a></li>
             <li>
             	<a href="#">Products by Category</a>
-            	<ul>
-            		<li><a href="left-sidebar.html">Left Sidebar</a></li>
-					<li><a href="right-sidebar.html">Right Sidebar</a></li>
-					<li><a href="no-sidebar.html">No Sidebar</a></li>
-            	</ul>
+            	<ul><form name="categoryDisplayForm" action="index.php" method="POST">
+<?php
+    $query = "SELECT * FROM categories;";
+    $cat_query = mysqli_query($connection, $query);
+    
+    while ($cat_row = mysqli_fetch_assoc($cat_query)){
+        echo '<li><a href="javascript: display('.$cat_row['cat_ID'].')" style="border-bottom: none; color: #fff">'.$cat_row['cat_title'].'</a></li>';
+    }
+?>
+            	</form></ul>
             </li>
             <li><a href="../registration" class="button special">Sign Up</a></li>
         </ul>
