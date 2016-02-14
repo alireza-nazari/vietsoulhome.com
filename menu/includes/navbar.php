@@ -1,11 +1,9 @@
 <!-- Header -->
-<div id="TOPPAGE"></div>
-<header id="header">
+<header id="header" class="fixed">
     <h1 id="logo"><a href="../">VietSoul</a></h1>
     <nav id="nav">
         <ul>
         	<li><a href="../">Home</a></li>
-            <li><a href="../menu">Menu</a></li>
             <li><a href="../contact/">Contact</a></li>
             <li>
             	<a href="#">Products by Category</a>
@@ -15,7 +13,7 @@
     $cat_query = mysqli_query($connection, $query);
     
     while ($cat_row = mysqli_fetch_assoc($cat_query)){
-        echo '<li><a href="javascript: display('.$cat_row['cat_ID'].')" style="border-bottom: none; color: #fff">'.$cat_row['cat_title'].'</a></li>';
+        echo '<li><a href="#'.$cat_row['cat_ID'].'" class="scrolly" style="border-bottom: none; color: #fff">'.$cat_row['cat_title'].'</a></li>';
     }
 ?>
             	</form></ul>

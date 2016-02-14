@@ -27,7 +27,7 @@
                 $query = "SELECT * FROM categories WHERE cat_ID = '".$product_row['cat_ID']."';";
                 $cat_query_display = mysqli_query($connection, $query);
                 $cat_row = mysqli_fetch_assoc($cat_query_display);
-                echo '<header class="major"><h2>';
+                echo '<div id="'.$cat_row['cat_ID'].'" style="padding-top: 3.2em"><header class="major"><h2>';
                 echo $cat_row['cat_title'];
                 echo '<small> '.$cat_row['cat_short_hint'].'</small></h2>';
                 if ($cat_row['cat_description'])
@@ -50,13 +50,13 @@
                 }
                 echo '</div></div><!-- /.row product--></div><!-- /.categories -->';
                 $product_row = $product_row1;
-                echo '</div><!-- ./row 150% --><hr></hr>';
+                echo '</div></div><!-- ./row 150% --><hr></hr>';
             }
         }
     }
 
 	while($cat_row = mysqli_fetch_assoc($cat_query_display)){
-		echo '<header class="major"><h2>';
+		echo '<div id="'.$cat_row['cat_ID'].'" style="padding-top: 3.2em"><header class="major"><h2>';
         echo $cat_row['cat_title'];
         echo '<small> '.$cat_row['cat_short_hint'].'</small></h2>';
         if ($cat_row['cat_description'])
@@ -85,6 +85,6 @@
             echo '</div></div><!-- /.row product--></div><!-- /.categories -->';
             $product_row = $product_row1;
         }
-        echo '</div><!-- ./row 150% --><hr></hr>';
+        echo '</div></div><!-- ./row 150% --><hr></hr>';
 	}
 ?>
