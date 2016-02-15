@@ -42,12 +42,12 @@
         $query = "SELECT * FROM user_roles WHERE user_role_ID = {$row['user_role']};";
         $user_role_query = mysqli_query($connection, $query);
         $find_user_role = mysqli_fetch_assoc($user_role_query);
-        echo '<td><div class="dropup"><button class="btn btn-default dropdown-toggle" type="button" id="user_role" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'.$find_user_role['user_role'].' <span class="caret"></span></button>';
-        echo '<ul class="dropdown-menu" aria-labelledby="user_role">';
+        echo '<td><div class="btn-group"><a class="btn dropdown-toggle" data-toggle="dropdown" id="user_role"><i class="icon-user icon-white"></i> '.$find_user_role['user_role'].' <span class="caret"></span></a>';
+        echo '<ul class="dropdown-menu">';
         $query = "SELECT * FROM user_roles;";
         $user_role_query = mysqli_query($connection, $query);
         while ($row_dropdown = mysqli_fetch_assoc($user_role_query)){
-            echo "<li><a href='functions/changeUserRole.php?user_ID={$row['user_ID']}&role_ID={$row_dropdown['user_role_ID']}'>{$row_dropdown['user_role']}</li>";
+            echo "<li><a href='functions/changeUserRole.php?user_ID={$row['user_ID']}&role_ID={$row_dropdown['user_role_ID']}'>{$row_dropdown['user_role']}</a></li>";
         }
         echo "</ul></div></td>";        
         echo "</tr>";

@@ -66,6 +66,8 @@
           </tr>
         </thead>
         <tbody>
+
+                                              
             <!-- Print product from db -->
 <?php
     $query = "SELECT * FROM products ORDER BY product_ID ASC;";
@@ -79,7 +81,7 @@
         $query = "SELECT cat_title FROM categories WHERE cat_ID = {$row['cat_ID']};";
         $cat_title_query = mysqli_query($connection, $query);
         $find_cat_title = mysqli_fetch_assoc($cat_title_query);
-        echo '<td><div class="dropup"><button class="btn btn-default dropdown-toggle" type="button" id="catmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'.$find_cat_title['cat_title'].' <span class="caret"></span></button>';
+        echo '<td><div class="btn-group"><a class="btn dropdown-toggle" id="catmenu" data-toggle="dropdown">'.$find_cat_title['cat_title'].' <span class="caret"></span></a>';
         echo '<ul class="dropdown-menu" aria-labelledby="catmenu">';
         $dropdown_query = "SELECT cat_ID, cat_title FROM categories;";
         $cat_dropdown_query = mysqli_query($connection, $dropdown_query);
@@ -105,16 +107,16 @@
         echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_price', '{$row['product_ID']}')".';"'.">{$row['product_price']}</td>";
 ?>
             <td>
-              <div class="dropup">
-                <button class="btn btn-default dropdown-toggle" type="button" id="recommendproduct" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                <?php if ($row['product_recommend']== 1){echo 'Yes';}
-                    else {echo 'No';}
+              <div class="btn-group">
+                <a class="btn dropdown-toggle" id="recommendproduct" data-toggle="dropdown">
+                <?php if ($row['product_recommend']== 1){echo '<i class="icon-check icon-white"></i> Yes';}
+                    else {echo '<i class="icon-check-empty icon-white"></i> No';}
                 ?>
                   <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="recommendproduct">
-                  <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=1">Yes</li>
-                  <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=0">No</li> 
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=1"><i class="icon-ok icon-white"></i> Yes</li>
+                  <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=0"><i class="icon-remove icon-white"></i> No</li> 
                 </ul>
               </div>
             </td>
