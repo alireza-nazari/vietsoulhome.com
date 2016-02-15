@@ -6,25 +6,25 @@
 <div class="main">
   <div class="main-inner">
     <div class="container">
-        <h1 class="page-header">
-            Menu Control
-            <small>Alter the Menu</small>
-        </h1>
+      <h1 class="page-header">
+        Menu Control
+        <small>Alter the Menu</small>
+      </h1>
     </div>
 
     <!-- Category table -->
     <div class="container">
-        <h3 class="page-header">Category Table</h3>
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Short Description</th>
-                    <th>Detail</th>
-                </tr>
-            </thead>
-            <tbody>
+      <h3 class="page-header">Category Table</h3>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Short Description</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
         <!-- Print category from db -->
 <?php
     $query = "SELECT * FROM categories ORDER BY cat_ID ASC;";
@@ -38,36 +38,34 @@
         echo "</tr>";
     }
 ?>
-            </tbody>
-        </table>
-        <form action="functions/deleteOrAddLine.php" method="get">
-            <input type="submit" class="btn btn-primary" value="Add More Category" name="add_cat">
-            <input type="submit" class="btn btn-danger" value="Delete Last Category" name="delete_cat">
-        </form>
-
+        </tbody>
+      </table>
+      <form action="functions/deleteOrAddLine.php" method="get">
+        <input type="submit" class="btn btn-primary" value="Add More Category" name="add_cat">
+        <input type="submit" class="btn btn-danger" value="Delete Last Category" name="delete_cat">
+      </form>
     </div> <!-- /.Category table -->
-    
 
     <!-- Product table -->
     <div class="container">
-        <h3 class="page-header">Product Table</h3>
+      <h3 class="page-header">Product Table</h3>
     </div>
     <div class="container-fluid">
-        <table class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Vietnamese</th>
-                    <th>Quantity</th>
-                    <th>Category</th>
-                    <th>Description</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Recomend</th>
-                </tr>
-            </thead>
-            <tbody>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Vietnamese</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Price</th>
+            <th>Recomend</th>
+          </tr>
+        </thead>
+        <tbody>
             <!-- Print product from db -->
 <?php
     $query = "SELECT * FROM products ORDER BY product_ID ASC;";
@@ -92,7 +90,7 @@
         echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_description', '{$row['product_ID']}')".';"'.">{$row['product_description']}</td>";
         echo '<td>';
         if ($row['product_img'])
-            echo '<a>Show Image<div><img class="img-responsive" style="width: 15em; height: 10em" src="../images/products/'.$row['product_img'].'"></div></a>';
+            echo '<a rel="popover" data-img="../images/products/'.$row['product_img'].'">Hover to show Image</a>';
         echo '<div style="padding-top: 1em">';
         echo '<form action="functions/uploadImage.php" enctype="multipart/form-data" method="POST">';
         echo '<div class="form-group">';
@@ -106,33 +104,33 @@
         echo '</div></form></div></td>';
         echo "<td contenteditable='true' onBlur=".'"'."saveProductChanges(this, 'product_price', '{$row['product_ID']}')".';"'.">{$row['product_price']}</td>";
 ?>
-                    <td>
-                        <div class="dropup">
-                          <button class="btn btn-default dropdown-toggle" type="button" id="recommendproduct" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            <?php if ($row['product_recommend']== 1){echo 'Yes';}
-                                else {echo 'No';}
-                            ?>
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="recommendproduct">
-                            <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=1">Yes</li>
-                            <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=0">No</li> 
-                          </ul>
-                        </div>
-                    </td>
-                </tr>
+            <td>
+              <div class="dropup">
+                <button class="btn btn-default dropdown-toggle" type="button" id="recommendproduct" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <?php if ($row['product_recommend']== 1){echo 'Yes';}
+                    else {echo 'No';}
+                ?>
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="recommendproduct">
+                  <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=1">Yes</li>
+                  <li><a href="functions/changeProductRecommendation.php?product_ID=<?php echo $row['product_ID']; ?>&product_recommend=0">No</li> 
+                </ul>
+              </div>
+            </td>
+          </tr>
 <?php
     }
 ?>
-            </tbody>
-        </table>
+        </tbody>
+      </table>
     </div>
     <!-- /container-fluid -->
     <div class="container">
-        <form action="functions/deleteOrAddLine.php" method="get">
-            <input type="submit" class="btn btn-primary" value="Add More Product" name="add_product">
-            <input type="submit" class="btn btn-danger" value="Delete Last Product" name="delete_product">
-        </form>
+      <form action="functions/deleteOrAddLine.php" method="get">
+        <input type="submit" class="btn btn-primary" value="Add More Product" name="add_product">
+        <input type="submit" class="btn btn-danger" value="Delete Last Product" name="delete_product">
+      </form>
     </div>
   </div>
   <!-- /main-inner --> 
@@ -140,28 +138,28 @@
 <!-- /main -->
 
 <script type="text/javascript">
-    function saveCatChanges(editableObj, column, id) {
-        $(editableObj).css('background', '#FFF url(../images/ajax-loader.gif) no-repeat right');
-        $.ajax({
-            url: 'functions/saveCatEdit.php',
-            type: 'POST',
-            data: 'column='+column+'&editval='+editableObj.innerHTML+'&id='+id,
-            success: function(data){
-                $(editableObj).css('background','#FDFDFD');
-            }
-        });
-    }
-    function saveProductChanges(editableObj, column, id) {
-        $(editableObj).css('background', '#FFF url(../images/ajax-loader.gif) no-repeat right');
-        $.ajax({
-            url: 'functions/saveProductEdit.php',
-            type: 'POST',
-            data: 'column='+column+'&editval='+editableObj.innerHTML+'&id='+id,
-            success: function(data){
-                $(editableObj).css('background','#FDFDFD');
-            }
-        });
-    }
+function saveCatChanges(editableObj, column, id) {
+    $(editableObj).css('background', '#FFF url(../images/ajax-loader.gif) no-repeat right');
+    $.ajax({
+        url: 'functions/saveCatEdit.php',
+        type: 'POST',
+        data: 'column='+column+'&editval='+editableObj.innerHTML+'&id='+id,
+        success: function(data){
+            $(editableObj).css('background','#FDFDFD');
+        }
+    });
+}
+function saveProductChanges(editableObj, column, id) {
+    $(editableObj).css('background', '#FFF url(../images/ajax-loader.gif) no-repeat right');
+    $.ajax({
+        url: 'functions/saveProductEdit.php',
+        type: 'POST',
+        data: 'column='+column+'&editval='+editableObj.innerHTML+'&id='+id,
+        success: function(data){
+            $(editableObj).css('background','#FDFDFD');
+        }
+    });
+}
 </script>
 
 <?php include "includes/a_footer.php"; ?>
