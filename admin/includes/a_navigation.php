@@ -43,11 +43,11 @@ $basename = $path['basename'];
         <?php if ($basename == 'report.php') echo '<li class="active">'; else echo '<li>'?>
         <a href="report.php"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
         <?php if ($basename == 'menuchange.php') echo '<li class="active">'; else echo '<li>'?>
-        <a href="menuchange.php"><i class="icon-book"></i><span>Menu</span> </a> </li>
+        <a href="menuchange.php"><i class="icon-book"></i><span>Menu Control</span> </a> </li>
         <?php if ($basename == 'user.php') echo '<li class="active">'; else echo '<li>'?>
         <a href="user.php"><i class="icon-user"></i><span>Users</span> </a></li>
         <?php if ($basename == 'order.php') echo '<li class="active">'; else echo '<li>'?>
-        <a href="order.php"><i class="icon-inbox"></i><span>Orders</span> </a> </li>
+        <a href="order.php"><i class="icon-hdd"></i><span>Orders</span> </a> </li>
         
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>
           <ul class="dropdown-menu">
