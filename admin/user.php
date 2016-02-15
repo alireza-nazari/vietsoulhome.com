@@ -1,37 +1,31 @@
 <?php include "includes/a_header.php"; ?>
 
-    <div id="wrapper">
-
         <!-- Navigation -->
 <?php include "includes/a_navigation.php"; ?>
 
-        <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            User Management
-                            <small>Control user's priviledges</small>
-                        </h1>
-                    </div>
-                    
-                    <div class="col-lg-12">
-                        <h3 class="page-header">Category Table</h3>
-                            <table class="table table-bordered table-striped">
-                                <thead>
-                                    <tr class="success">
-                                        <th>ID</th>
-                                        <th>Firstname</th>
-                                        <th>Lastname</th>
-                                        <th>Phone number</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+<div class="main">
+  <div class="main-inner">
+    <div class="container">
+      <div class="span12">
+        <h1 class="page-header">
+          User Management
+          <small>Control user's priviledges</small>
+        </h1>
+      </div>
+      <div class="span12">
+        <h3 class="page-header">Category Table</h3>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr class="success">
+              <th>ID</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Phone number</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>                        
     <!-- Print users from db -->
 <?php
     $query = "SELECT * FROM users ORDER BY user_ID ASC;";
@@ -59,20 +53,13 @@
         echo "</tr>";
     }
 ?>
-                                </tbody>
-                            </table>
-                    </div>
-                </div>
-                <!-- /.row -->
+          </tbody>
+        </table>
+      </div>
+    </div> <!-- /.container -->
+  </div> <!-- /. main-inner -->
+</div>
 
-            </div>
-            <!-- /.container-fluid -->
-
-        </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
 <script type="text/javascript">
     function saveUserChanges(editableObj, column, id) {
         $(editableObj).css('background', '#FFF url(../images/ajax-loader.gif) no-repeat right');
