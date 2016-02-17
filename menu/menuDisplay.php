@@ -37,9 +37,9 @@
                 echo '<h3>'.$product_row['product_title'].'<small> '.$product_row['product_viet_title'].'</small></h3>';
 
                 if ($product_row['product_img']){
-                    echo '<div class="row"><div class="5u">';
+                    echo '<div class="row"><div class="5u 12u$(small)">';
                     echo '<img class="image fit" style="width: 11em; height: 11em;" src="../images/products/'.$product_row['product_img'].'">';
-                    echo '</div><div class="7u">';
+                    echo '</div><div class="7u 12u$(small)">';
                 }
 
                 echo '<p>'.$product_row['product_description'].'</p>';
@@ -47,6 +47,10 @@
                 if ($product_row['product_title'] == $product_row1['product_title']){
                     echo '<br/><strong class="pull-left">'.$product_row1['product_quantity'].'</strong><strong class="pull-right">$ '.$product_row1['product_price'].'</strong>';
                     $product_row1 = mysqli_fetch_assoc($product_query);
+                }
+
+                if ($product_row['product_img']){
+                    echo '</div><!-- /.row -->';
                 }
                 echo '</div></div><!-- /.row product--></div><!-- /.categories -->';
                 $product_row = $product_row1;
@@ -71,9 +75,9 @@
             echo '<h3>'.$product_row['product_title'].'<small> '.$product_row['product_viet_title'].'</small></h3>';
 
             if ($product_row['product_img']){
-                echo '<div class="row"><div class="5u">';
+                echo '<div class="row"><div class="5u 12u$(small)">';
                 echo '<img class="image fit" style="width: 11em; height: 11em;" src="../images/products/'.$product_row['product_img'].'">';
-                echo '</div><div class="7u">';
+                echo '</div><div class="7u 12u$(small)">';
             }
 
             echo '<p>'.$product_row['product_description'].'</p>';
