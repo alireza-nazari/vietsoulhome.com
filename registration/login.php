@@ -1,21 +1,21 @@
-<?php include "header.php"; ?>
+<?php include "header.php";?>
 
 	<title>Login - VietSoul Restaurant</title>
 </head>
 
 <body>
 
-<?php include "navbar.php"; ?>
+<?php include "navbar.php";?>
 
 <div class="account-container">
 	<div class="content clearfix">
 		<form action="loginFunctions.php" method="post">
-			<h1>Member Login</h1>		
+			<h1>Member Login</h1>
 			<div class="login-fields">
 				<p>Please provide your details</p>
 				<div class="field">
-					<label for="username">Username</label>
-					<input type="text" id="email" name="email" value="" placeholder="Username" class="login username-field" />
+					<label for="username">Email</label>
+					<input type="text" id="email" name="email" value="" placeholder="Email" class="login username-field" />
 				</div> <!-- /field -->
 				<div class="field">
 					<label for="password">Password:</label>
@@ -40,4 +40,4 @@
 	<a href="#">Reset Password</a>
 </div> <!-- /login-extra -->
 
-<?php include "footer.php"; ?>
+<?php include "footer.php";?>

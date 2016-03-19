@@ -54,6 +54,7 @@ $(function (){
     $.ajax({url: "menuDisplay.php", success: function(result){
         $("#menuContent").html(result);
     }});
+    $(".toTop").hide();
     $(document).scroll(function() {
         if($(document).scrollTop() > 300)
             $(".toTop").fadeIn();
