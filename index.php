@@ -1,10 +1,10 @@
-<?php include "includes/header.php"; ?>
-<?php include "includes/connection.php"; ?>
+<?php include "includes/header.php";?>
+<?php include "includes/connection.php";?>
 
 <body class="landing">
 	<div id="page-wrapper">
     <!-- Navigation -->
-<?php include "includes/navbar.php"; ?>
+<?php include "includes/navbar.php";?>
 
 <!-- Banner -->
 <section id="banner">
@@ -32,15 +32,15 @@
 					</header>
 				</div>
 				<div class="3u 12u$(medium)">
-					<p>Our food features a combination of five fundamental tastes: 
+					<p>Our food features a combination of five fundamental tastes:
 					Sour, Bitter, Sweet, Spicy, and Salty.</p>
-					<p>Each Vietnamese dish has 
+					<p>Each Vietnamese dish has
 					a distinctive flavor which reflects one or more of these elements.</p>
 				</div>
 				<div class="4u$ 12u$(medium)">
 					<p>Our cuisine is listed as one of the healthiest in the world. Our food usually contain plenty of vegetables
-					 and herbs which ensure that you get your daily recommended dose of Vitamin E and A.<br/> These vitamins help reverse ageing 
-					 which is why we look young all the time. Most of our broth take hours to prepare and is rich with vitamins and minerals 
+					 and herbs which ensure that you get your daily recommended dose of Vitamin E and A.<br/> These vitamins help reverse ageing
+					 which is why we look young all the time. Most of our broth take hours to prepare and is rich with vitamins and minerals
 					 which will help boost your immunity.</p>
 				</div>
 			</div>
@@ -152,4 +152,4 @@
 	</div>
 </section>
         <!-- Footer -->
-<?php include "includes/footer.php"; ?>
+<?php include "includes/footer.php";?>

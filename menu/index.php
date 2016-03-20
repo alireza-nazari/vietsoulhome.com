@@ -1,16 +1,16 @@
-<?php include "includes/header.php"; ?>
+<?php include "includes/header.php";?>
 
 <body class="landing">
     <div id="TOPPAGE"></div>
     <div id="page-wrapper">
     <!-- Navigation -->
-<?php include "includes/navbar.php"; ?>
+<?php include "includes/navbar.php";?>
 
         <div id="main" class="wrapper style1">
             <div class="container-fluid">
                 <div class="row">
         <!-- Menu Entries Column -->
-<?php include "includes/sidebar.php"; ?>
+<?php include "includes/sidebar.php";?>
                     <div class="9u 12u$(large)" id="menuContent" style="padding: 0 2em 0 5em"></div>
 
                 </div><!-- /.row -->
@@ -19,4 +19,4 @@
         </div>
     </div><!-- /.page-wrapper -->
 
-<?php include "includes/footer.php"; ?>
+<?php include "includes/footer.php";?>
