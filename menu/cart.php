@@ -24,6 +24,11 @@ if (isset($_POST['product_ID'])) {
 	}
 }
 ?>
+<?php
+if (isset($_POST['cmd']) && $_POST['cmd'] == "emptyCart") {
+	unset($_SESSION['cart_array']);
+}
+?>
 
 <?php
 $cartOutput = "";
@@ -44,3 +49,7 @@ if (!isset($_SESSION['cart_array']) || count($_SESSION['cart_array']) < 1) {
 echo 'User ID: ' . $_SESSION['id'];
 echo $cartOutput;
 ?>
+<form method="POST">
+  <input type="hidden" name="cmd" value="emptyCart"></input>
+  <button type="submit">Empty Cart</button>
+</form>

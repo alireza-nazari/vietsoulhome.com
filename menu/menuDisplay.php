@@ -51,9 +51,9 @@ if ($search) {
 			echo '<div class="6u 12u$(medium)">';
 			echo '<h3>' . $product_row['product_title'] . '<small> ' . $product_row['product_viet_title'] . '</small>';
 			if ($_SESSION['role'] == 3) {
-				echo '<form id="shoppingForm" name="shoppingForm" method="POST" action="cart.php" class="pull-right">';
+				echo '<form method="POST" onsubmit="return submitData(this);" class="pull-right">';
 				echo '<input type="hidden" name="product_ID" id="product_ID" value="' . $product_row['product_ID'] . '" />';
-				echo '<button type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
+				echo '<button class="submitForm" type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
 				echo '</form>';
 			}
 			echo '</h3>';
@@ -99,13 +99,13 @@ while ($cat_row = mysqli_fetch_assoc($cat_query_display)) {
 		echo '<div class="6u 12u$(medium)">';
 		echo '<h3>' . $product_row['product_title'] . '<small> ' . $product_row['product_viet_title'] . '</small>';
 		if (($_SESSION['role'] == 3)) {
-			echo '<form id="shoppingForm" name="shoppingForm" method="POST" action="cart.php" class="pull-right">';
+			echo '<form method="POST" onsubmit="return submitData(this);" class="pull-right">';
 			if ($product_row['product_title'] == $product_row1['product_title']) {
 				echo '<select class="none" name="product_ID" id="product_ID"><option value="' . $product_row['product_ID'] . '"> Small</option><option value="' . $product_row1['product_ID'] . '"> Large</option></select>';
 			} else {
 				echo '<input type="hidden" name="product_ID" id="product_ID" value="' . $product_row['product_ID'] . '" />';
 			}
-			echo '<button type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
+			echo '<button class="submitForm" type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
 			echo '</form>';
 		}
 		echo '</h3>';
