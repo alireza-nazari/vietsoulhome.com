@@ -21,6 +21,7 @@ if (isset($_POST['login'])) {
 	$row = mysqli_fetch_assoc($select_user_query);
 	$role = $row['user_role'];
 	if ($count == 1) {
+		$_SESSION['id'] = $row['user_ID'];
 		$_SESSION['email'] = $email;
 		$_SESSION['firstname'] = $row['user_firstname'];
 		$_SESSION['lastname'] = $row['user_lastname'];

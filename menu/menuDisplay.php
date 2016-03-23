@@ -1,3 +1,15 @@
+<style type="text/css">
+  .none {
+    all: initial;
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat #ddd;
+    background-position: 97% 60%;
+    color: rgb(76, 76, 76);
+    padding: 0.05em 1em 0.05em 0.5em;
+    margin: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+  }
+</style>
 <?php include_once "../includes/connection.php";?>
 <?php
 
@@ -38,16 +50,13 @@ if ($search) {
 			echo '</header><div class="row 150%">';
 			echo '<div class="6u 12u$(medium)">';
 			echo '<h3>' . $product_row['product_title'] . '<small> ' . $product_row['product_viet_title'] . '</small>';
-      echo "no sessions";
-      if ($_SESSION['role'] == 3){
-        if ($product_row['product_title'] == $product_row1['product_title']){
-          echo '<a href="order.php?product_id='.$product_row1['product_ID'].'"><span class="icon fa-shopping-cart pull-right"> Large </span></a>';
-          echo '<a href="order.php?product_id='.$product_row['product_ID'].'"><span class="icon fa-shopping-cart pull-right"> Small </span></a>';
-        }
-        else
-          echo '<a href="order.php?product_id='.$product_row['product_ID'].'"><span class="icon fa-shopping-cart pull-right"></span></a>';
-      }
-      echo '</h3>';
+			if ($_SESSION['role'] == 3) {
+				echo '<form id="shoppingForm" name="shoppingForm" method="POST" action="cart.php" class="pull-right">';
+				echo '<input type="hidden" name="product_ID" id="product_ID" value="' . $product_row['product_ID'] . '" />';
+				echo '<button type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
+				echo '</form>';
+			}
+			echo '</h3>';
 
 			if ($product_row['product_img']) {
 				echo '<div class="row"><div class="5u 12u$(small)">';
@@ -61,12 +70,11 @@ if ($search) {
 				echo '<br/><strong class="pull-left">' . $product_row1['product_quantity'] . '</strong><strong class="pull-right">$ ' . $product_row1['product_price'] . '</strong>';
 				$product_row1 = mysqli_fetch_assoc($product_query);
 			}
-			
 
 			if ($product_row['product_img']) {
 				echo '</div><!-- /.row -->';
 			}
-      echo '<span class="icon fa-shopping-cart"></span>';
+			echo '<span class="icon fa-shopping-cart"></span>';
 			echo '</div></div><!-- /.row product--></div><!-- /.categories -->';
 			$product_row = $product_row1;
 			echo '</div></div><!-- ./row 150% --><hr></hr>';
@@ -90,15 +98,17 @@ while ($cat_row = mysqli_fetch_assoc($cat_query_display)) {
 		$product_row1 = mysqli_fetch_assoc($product_query);
 		echo '<div class="6u 12u$(medium)">';
 		echo '<h3>' . $product_row['product_title'] . '<small> ' . $product_row['product_viet_title'] . '</small>';
-    if (($_SESSION['role'] == 3)){
-      if ($product_row['product_title'] == $product_row1['product_title']){
-        echo '<a href="order.php?product_id='.$product_row1['product_ID'].'"><span class="icon fa-shopping-cart pull-right"> Large </span></a>';
-        echo '<a href="order.php?product_id='.$product_row['product_ID'].'"><span class="icon fa-shopping-cart pull-right"> Small </span></a>';
-      }
-      else
-        echo '<a href="order.php?product_id='.$product_row['product_ID'].'"><span class="icon fa-shopping-cart pull-right"></span></a>';
-    }
-    echo '</h3>';
+		if (($_SESSION['role'] == 3)) {
+			echo '<form id="shoppingForm" name="shoppingForm" method="POST" action="cart.php" class="pull-right">';
+			if ($product_row['product_title'] == $product_row1['product_title']) {
+				echo '<select class="none" name="product_ID" id="product_ID"><option value="' . $product_row['product_ID'] . '"> Small</option><option value="' . $product_row1['product_ID'] . '"> Large</option></select>';
+			} else {
+				echo '<input type="hidden" name="product_ID" id="product_ID" value="' . $product_row['product_ID'] . '" />';
+			}
+			echo '<button type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
+			echo '</form>';
+		}
+		echo '</h3>';
 
 		if ($product_row['product_img']) {
 			echo '<div class="row"><div class="5u 12u$(small)">';
@@ -113,7 +123,7 @@ while ($cat_row = mysqli_fetch_assoc($cat_query_display)) {
 			$product_row1 = mysqli_fetch_assoc($product_query);
 		}
 		echo '</div>';
-    echo '</div><!-- /.row product--></div><!-- /.categories -->';
+		echo '</div><!-- /.row product--></div><!-- /.categories -->';
 		$product_row = $product_row1;
 	}
 	echo '</div></div><!-- ./row 150% --><hr></hr>';

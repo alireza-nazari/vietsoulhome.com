@@ -30,7 +30,7 @@
                 </header>
             </div>
         </div>
-
+        
         <ul class="copyright">
             <li>&copy; VietSoul 2016. All rights reserved.</li><li>Design: HTML5 UP</li><li>Powered: DucTruong</li>
         </ul>
@@ -80,41 +80,7 @@ $('[name="search"]').keypress(function(a){
 });
 </script>
 
-<script type="text/javascript">
-// process the form
-$("#shoppingForm").submit(function(event) {
-    event.preventDefault();
-    // get the form data
-    // there are many ways to get this data using jQuery (you can use the class or id also)
-    var formData = {
-        'product_ID'  : $('input[name=product_ID]').val()
-    };
-
-
-    // process the form
-    $.ajax({
-        type        : 'POST',
-        url         : 'cart.php',
-        data        : formData,
-        dataType    : 'json',
-                    encode          : true
-    })
-        // using the done promise callback
-        .done(function(data) {
-
-            // log data to the console so we can see
-            console.log(data);
-
-            // here we will handle errors and validation messages
-        });
-
-    // stop the form from submitting the normal way and refreshing the page
-
-});
-
-</script>
-
-<?php mysqli_close($connection);?>
+<?php mysqli_close($connection); ?>
 
 </body>
 </html>
