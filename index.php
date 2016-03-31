@@ -25,19 +25,19 @@
 	<div class="content">
 		<div class="container">
 			<div class="row">
-				<div class="5u 12u$(medium)">
+				<div class="col-md-5">
 					<header>
 						<h2>Vietnamese cuisine</h2>
 						<p>A style of cooking with complementary textures, reliance on herbs and vegetables</p>
 					</header>
 				</div>
-				<div class="3u 12u$(medium)">
+				<div class="col-md-3">
 					<p>Our food features a combination of five fundamental tastes:
 					Sour, Bitter, Sweet, Spicy, and Salty.</p>
 					<p>Each Vietnamese dish has
 					a distinctive flavor which reflects one or more of these elements.</p>
 				</div>
-				<div class="4u$ 12u$(medium)">
+				<div class="col-md-4">
 					<p>Our cuisine is listed as one of the healthiest in the world. Our food usually contain plenty of vegetables
 					 and herbs which ensure that you get your daily recommended dose of Vitamin E and A.<br/> These vitamins help reverse ageing
 					 which is why we look young all the time. Most of our broth take hours to prepare and is rich with vitamins and minerals
@@ -93,33 +93,36 @@
 			<p>We offer Online ordering for your convinience as well as improving our service overall</p>
 		</header>
 		<div class="box alt">
-			<div class="row uniform">
-				<section class="4u 6u(medium) 12u$(xsmall)">
+			<div class="row">
+				<section class="col-md-4 col-sm-6">
 					<span class="icon alt major fa-fighter-jet"></span>
 					<h3>Exceptional service</h3>
 					<p>We hold true to the qoute <em>"Customer is God"</em> with all our hearts.</p>
 				</section>
-				<section class="4u 6u$(medium) 12u$(xsmall)">
+				<section class="col-md-4 col-sm-6">
 					<span class="icon alt major fa-cutlery"></span>
 					<h3>Excellent products</h3>
 					<p>All our food is daily-cooked and extremely healthy.</p>
 				</section>
-				<section class="4u$ 6u(medium) 12u$(xsmall)">
+        <section class="clearfix visible-sm-block"></section>
+				<section class="col-md-4 col-sm-6">
 					<span class="icon alt major fa-coffee"></span>
 					<h3>Exclusive dinning atmosphere</h3>
 					<p>Take your experience to the next level.</p>
 				</section>
-				<section class="4u 6u$(medium) 12u$(xsmall)">
+        <section class="clearfix visible-md-block visible-lg-block"></section>
+				<section class="col-md-4 col-sm-6">
 					<span class="icon alt major fa-wifi"></span>
 					<h3>Enjoy your meal</h3>
 					<p>Free wifi and cozy atmosphere to make you feel like home.</p>
 				</section>
-				<section class="4u 6u(medium) 12u$(xsmall)">
+        <section class="clearfix visible-sm-block"></section>
+				<section class="col-md-4 col-sm-6">
 					<span class="icon alt major fa-shopping-cart"></span>
 					<h3>Online Ordering</h3>
 					<p>Fully customizable your order online.</p>
 				</section>
-				<section class="4u$ 6u$(medium) 12u$(xsmall)">
+				<section class="col-md-4 col-sm-6">
 					<span class="icon alt major fa-money"></span>
 					<h3>Online Payment</h3>
 					<p>Walk-in and walk-out the restaurant <strong>FAST</strong>.</p>
@@ -135,7 +138,7 @@
 </section>
 
 <!-- Five -->
-<section id="five" class="wrapper style2 special fade" style="background: #DB3E4E">
+<section id="five" class="wrapper style2 special fade-up">
 	<div class="container">
 		<header>
 			<h2>Tell us about it</h2>
@@ -143,10 +146,10 @@
 			<p>We are appreciated your critique!</p>
 		</header>
 		<form method="post" action="#" class="container 50%">
-			<div class="row uniform 50%">
-				<div class="8u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-				<div class="4u$ 12u$(xsmall)"><input type="submit" value="Get Involved" class="fit special" /></div>
-				<div class="12u$"><textarea rows="4" name="comment" id="comment" placeholder="Your Comment" style="resize: none"></textarea><div>
+			<div class="row">
+				<div class="col-xs-8"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
+				<div class="col-xs-4"><input type="submit" value="Get Involved" class="fit special" /></div>
+				<div class="col-xs-12"><textarea rows="4" name="comment" id="comment" placeholder="Your Comment" style="resize: none"></textarea><div>
 			</div>
 		</form>
 	</div>

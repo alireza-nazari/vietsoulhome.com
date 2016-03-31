@@ -28,7 +28,7 @@ if (isset($_SESSION['email'])) {
 		echo '</ul></li>';
 		break;
 	case '3':
-		echo '<li><a href=""><span class="fa fa-shopping-cart" id="cartItems"></span> Cart</a></li>';
+		echo '<li><a href="cart.php"><span class="fa fa-shopping-cart" id="cartItems"></span> Cart</a></li>';
 		echo '<li><a href="#"><i class="fa fa-user"></i> Account </a><ul>';
 		echo '<li><a href="../account/"><i class="fa fa-wrench"></i> Account page</a></li>';
 		echo '<li><a href="../admin/functions/logout.php"><i class="fa fa-sign-out"></i> Logout</a></li>';

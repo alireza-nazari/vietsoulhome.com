@@ -48,7 +48,7 @@ if ($search) {
 			}
 
 			echo '</header><div class="row 150%">';
-			echo '<div class="6u 12u$(medium)">';
+			echo '<div class="col-md-6">';
 			echo '<h3>' . $product_row['product_title'] . '<small> ' . $product_row['product_viet_title'] . '</small>';
 			if ($_SESSION['role'] == 3) {
 				echo '<form method="POST" onsubmit="return submitData(this);" class="pull-right">';
@@ -59,9 +59,9 @@ if ($search) {
 			echo '</h3>';
 
 			if ($product_row['product_img']) {
-				echo '<div class="row"><div class="5u 12u$(small)">';
+				echo '<div class="row"><div class="col-sm-5">';
 				echo '<img class="image fit" style="width: 11em; height: 11em;" src="../images/products/' . $product_row['product_img'] . '">';
-				echo '</div><div class="7u 12u$(small)">';
+				echo '</div><div class="col-sm-7">';
 			}
 
 			echo '<p>' . $product_row['product_description'] . '</p>';
@@ -96,7 +96,7 @@ while ($cat_row = mysqli_fetch_assoc($cat_query_display)) {
 	$product_row = mysqli_fetch_assoc($product_query);
 	while ($product_row) {
 		$product_row1 = mysqli_fetch_assoc($product_query);
-		echo '<div class="6u 12u$(medium)">';
+		echo '<div class="col-md-6">';
 		echo '<h3>' . $product_row['product_title'] . '<small> ' . $product_row['product_viet_title'] . '</small>';
 		if (($_SESSION['role'] == 3)) {
 			echo '<form method="POST" onsubmit="return submitData(this);" class="pull-right">';
@@ -111,9 +111,9 @@ while ($cat_row = mysqli_fetch_assoc($cat_query_display)) {
 		echo '</h3>';
 
 		if ($product_row['product_img']) {
-			echo '<div class="row"><div class="5u 12u$(small)">';
+			echo '<div class="row"><div class="col-sm-5">';
 			echo '<img class="image fit" style="width: 11em; height: 11em;" src="../images/products/' . $product_row['product_img'] . '">';
-			echo '</div><div class="7u 12u$(small)">';
+			echo '</div><div class="col-sm-7">';
 		}
 
 		echo '<p>' . $product_row['product_description'] . '</p>';
