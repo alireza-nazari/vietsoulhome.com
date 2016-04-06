@@ -4,7 +4,6 @@
     <ul>
       <li><a href="#two" class="scrolly">About</a></li>
       <li><a href="menu/">Menu</a></li>
-      <li><a href="contact/">Contact</a></li>
 <?php include "includes/loggedInNavbar.php";?>
     </ul>
   </nav>

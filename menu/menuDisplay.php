@@ -1,13 +1,17 @@
 <style type="text/css">
-  .none {
+  select.none {
     all: initial;
     background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat #ddd;
     background-position: 97% 60%;
     color: rgb(76, 76, 76);
-    padding: 0.05em 1em 0.05em 0.5em;
+    padding: 0.2em 1em 0.2em 0.25em;
     margin: 0.5em;
     border: 1px solid #ccc;
     border-radius: 0.3em;
+  }
+  select.none > option {
+    background-color: #ddd;
+    color: rgb(76, 76, 76);
   }
 </style>
 <?php include_once "../includes/connection.php";?>
@@ -53,7 +57,7 @@ if ($search) {
 			if ($_SESSION['role'] == 3) {
 				echo '<form method="POST" onsubmit="return submitData(this);" class="pull-right">';
 				echo '<input type="hidden" name="product_ID" id="product_ID" value="' . $product_row['product_ID'] . '" />';
-				echo '<button class="submitForm" type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
+				echo '<button id="submitForm" type="submit" class="btn btn-default btn-sm"><span class="fa fa-shopping-cart"></span> Add</button>';
 				echo '</form>';
 			}
 			echo '</h3>';
@@ -105,7 +109,7 @@ while ($cat_row = mysqli_fetch_assoc($cat_query_display)) {
 			} else {
 				echo '<input type="hidden" name="product_ID" id="product_ID" value="' . $product_row['product_ID'] . '" />';
 			}
-			echo '<button class="submitForm" type="submit"><span class="fa fa-shopping-cart"></span> Add</button>';
+			echo '<button id="submitForm" type="submit" class="btn btn-default btn-sm"><span class="fa fa-shopping-cart"></span> Add</button>';
 			echo '</form>';
 		}
 		echo '</h3>';

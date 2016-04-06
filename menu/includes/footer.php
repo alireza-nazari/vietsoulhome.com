@@ -63,6 +63,16 @@ $(function (){
             $(".toTop").fadeIn();
         else $(".toTop").fadeOut();
     });
+    $("#cartItems").text("<?php
+$totalItems = 0;
+if (isset($_SESSION['cart_array'])) {
+	foreach ($_SESSION['cart_array'] as $each_item) {
+		$totalItems += $each_item['quantity'];
+	}
+}
+echo $totalItems;
+?>");
+
 });
 
 function display(a){
@@ -94,15 +104,21 @@ function submitData(obj)
       type        : 'POST',
       url         : 'cart.php',
       data        : formData,
-      dataType    : 'json',
-                  encode          : true
-  })
-    .done(function(data) {
-
-    });
+  }).done(function (){
+    $("#cartItems").text("<?php
+$totalItems = 0;
+if (isset($_SESSION['cart_array'])) {
+	foreach ($_SESSION['cart_array'] as $each_item) {
+		$totalItems += $each_item['quantity'];
+	}
+}
+echo $totalItems;
+?>");
+  });
 
 return false;
 }
+
 </script>
 
 <?php mysqli_close($connection);?>
