@@ -42,31 +42,32 @@ $cartOutput = "";
 if (!isset($_SESSION['cart_array']) || count($_SESSION['cart_array']) < 1) {
 	$cartOutput = "<h2 align='center'>No product selected<br /><br /><br /><br /></h2><br />";
 } else {
-	$i = 0;
+	$totalPayment = 0;
 	foreach ($_SESSION['cart_array'] as $each_item) {
-		$i++;
-		$cartOutput .= "<h2>Cart Item $i</h2>";
-		while (list($key, $value) = each($each_item)) {
-			if ($key == 'product_ID') {
-				$query = "SELECT * FROM products WHERE product_ID = '{$value}';";
-				$run_query = mysqli_query($connection, $query);
-				$result = mysqli_fetch_assoc($run_query);
-				$cartOutput .= '<img class="image fit" style="width: 11em; height: 11em;" src="../images/products/' . $result['product_img'] . '">';
-				$cartOutput .= "Product: " . $result['product_title'];
-
-				$cartOutput .= "<br />";
-			} else {
-				$cartOutput .= "$key: $value<br />";
-			}
-		}
-		$cartOutput .= "<hr />";
+		$product_ID = $each_item['product_ID'];
+		$query = "SELECT * FROM products WHERE product_ID = '{$product_ID}';";
+		$run_query = mysqli_query($connection, $query);
+		$result = mysqli_fetch_assoc($run_query);
+		$cartOutput .= '<div class="row"><div class="col-sm-4"><img class="image fit" style="height: 10em;" src="../images/products/' . $result['product_img'] . '"></div>';
+		$cartOutput .= '<div class="col-sm-8">Product: ' . $result['product_title'] . '<br />';
+		$cartOutput .= "Quantity: {$each_item['quantity']}<br />";
+		$pay = $result['product_price'] * $each_item['quantity'];
+		$totalPayment += $pay;
+		$cartOutput .= 'Total: $' . $pay . '<br /></div>';
+		$cartOutput .= "</div><hr />";
 	}
 
+	$cartOutput .= '<div><div class="col-sm-9 text-right">Total Cost</div><div class="col-sm-3 text-right">$ ' . $totalPayment . '</div></div>';
+	$tax = number_format($totalPayment * .0825, 2);
+	$cartOutput .= '<div><div class="col-sm-9 text-right">Tax</div><div class="col-sm-3 text-right">$ ' . $tax . '</div></div>';
+	$totalPayment += $tax;
+	$cartOutput .= '<div style="margin-bottom: 10em"><div class="col-sm-9 text-right">TOTAL PAYMENT</div><div class="col-sm-3 text-right">$ ' . $totalPayment . '</div></div>';
 	$cartOutput .= '<form method="POST" class="pull-left">
               <input type="hidden" name="cmd" value="emptyCart"></input>
-              <button type="submit" class="btn btn-large btn-warning">Empty Cart</button>
+              <button type="submit" class="btn btn-large btn-danger">Empty Cart</button>
             </form>';
 	$cartOutput .= '<form method="GET" class="pull-right" action="makeOrder.php">
+              <input type="hidden" name="totalCost" value="' . $totalPayment . '"></input>
               <button type="submit" class="btn btn-large btn-primary">Confirm Order</button>
             </form>';
 }
@@ -74,6 +75,7 @@ if (!isset($_SESSION['cart_array']) || count($_SESSION['cart_array']) < 1) {
         <div id="main" class="wrapper">
           <div class="container">
 <?php
+
 echo $cartOutput;
 ?>
 

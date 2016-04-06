@@ -1,6 +1,6 @@
 <?php include "includes/header.php";?>
 <?php
-$query = "INSERT INTO orders(user_ID) VALUES ('" . $_SESSION['id'] . "');";
+$query = "INSERT INTO orders(user_ID, order_payment) VALUES ('" . $_SESSION['id'] . "', '" . $_GET['totalCost'] . "');";
 mysqli_query($connection, $query);
 $query = "SELECT * FROM orders;";
 $run = mysqli_query($connection, $query);
