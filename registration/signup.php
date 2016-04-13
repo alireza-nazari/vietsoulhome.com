@@ -31,7 +31,7 @@ if ($count != 0) {
 
 //mail password confirmation
 
-$homepage = "http://localhost/vietsoulhome";
+$homepage = "http://www.vietsoulhome.com";
 $to = $email; // Send email to our user
 $subject = 'Signup | Verification'; // Give the email a subject
 $message = '

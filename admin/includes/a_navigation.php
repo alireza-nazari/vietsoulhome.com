@@ -5,32 +5,25 @@
       <div class="nav-collapse">
         <ul class="nav pull-right">
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-cog"></i> Account <b class="caret"></b></a>
+                            class="icon-user"></i> Account<b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="javascript:;">Settings</a></li>
-              <li><a href="javascript:;">Help</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                            class="icon-user"></i> EGrappler.com <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="javascript:;">Profile</a></li>
-              <li><a href="javascript:;">Logout</a></li>
+              <li><a href="profile.php">Profile</a></li>
+              <li><a href="functions/logout.php">Logout</a></li>
             </ul>
           </li>
         </ul>
       </div>
-      <!--/.nav-collapse --> 
+      <!--/.nav-collapse -->
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /navbar-inner --> 
+  <!-- /navbar-inner -->
 </div>
 <!-- /navbar -->
 
 <?php
 $query = $_SERVER['PHP_SELF'];
-$path = pathinfo( $query );
+$path = pathinfo($query);
 $basename = $path['basename'];
 ?>
 
@@ -38,31 +31,38 @@ $basename = $path['basename'];
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">
-        <?php if ($basename == 'index.php') echo '<li class="active">'; else echo '<li>'?>
+        <?php if ($basename == 'index.php') {
+	echo '<li class="active">';
+} else {
+	echo '<li>';
+}
+?>
         <a href="index.php"><i class="icon-dashboard"></i><span>Dashboard</span> </a> </li>
-        <?php if ($basename == 'report.php') echo '<li class="active">'; else echo '<li>'?>
-        <a href="report.php"><i class="icon-list-alt"></i><span>Reports</span> </a> </li>
-        <?php if ($basename == 'menuchange.php') echo '<li class="active">'; else echo '<li>'?>
+        <?php if ($basename == 'menuchange.php') {
+	echo '<li class="active">';
+} else {
+	echo '<li>';
+}
+?>
         <a href="menuchange.php"><i class="icon-book"></i><span>Menu Control</span> </a> </li>
-        <?php if ($basename == 'user.php') echo '<li class="active">'; else echo '<li>'?>
+        <?php if ($basename == 'user.php') {
+	echo '<li class="active">';
+} else {
+	echo '<li>';
+}
+?>
         <a href="user.php"><i class="icon-user"></i><span>Users</span> </a></li>
-        <?php if ($basename == 'order.php') echo '<li class="active">'; else echo '<li>'?>
+        <?php if ($basename == 'order.php') {
+	echo '<li class="active">';
+} else {
+	echo '<li>';
+}
+?>
         <a href="order.php"><i class="icon-hdd"></i><span>Orders</span> </a> </li>
-        
-        <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="icons.html">Icons</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="pricing.html">Pricing Plans</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="signup.html">Signup</a></li>
-            <li><a href="error.html">404</a></li>
-          </ul>
-        </li>
       </ul>
     </div>
-    <!-- /container --> 
+    <!-- /container -->
   </div>
-  <!-- /subnavbar-inner --> 
+  <!-- /subnavbar-inner -->
 </div>
 <!-- /subnavbar -->

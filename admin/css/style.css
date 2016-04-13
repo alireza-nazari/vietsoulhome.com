@@ -7,10 +7,14 @@ Bootstrap Admin Template by EGrappler.com
 /*------------------------------------------------------------------
 [1. Global]
 */
-
+html {
+  position: relative;
+  min-height: 100%;
+}
 body {
 	background: #f9f6f1;
 	font: 13px/1.7em 'Open Sans';
+  margin-bottom: 3em;
 }
     
 p { 

@@ -7,7 +7,7 @@
 <hr />
 <div class="container">
   <h2>Order History</h2>
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-striped" style="background-color: #fff">
     <thead>
       <tr>
         <th>Order ID</th>
