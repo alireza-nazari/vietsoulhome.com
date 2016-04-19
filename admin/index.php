@@ -48,24 +48,48 @@ echo mysqli_num_rows($result);?>
             </div>
             <!-- /widget-header -->
             <div class="widget-content">
-              <table class="table table-striped table-bordered">
+              <table class="table table-striped table-bordered tablesorter" id="customerRank">
                 <thead>
-                  <th>Rank</th>
-                  <th>User</th>
+                  <th>ID</th>
+                  <th>Name</th>
                   <th>Total orders made</th>
+                  <th>Ranking by Order</th>
                 </thead>
                 <tbody>
 
 
 <?php
-$result = mysqli_query($connection, 'SELECT * FROM users WHERE user_role = 3;');
+$arrayRanking = array();
+$query = 'SELECT * FROM users WHERE user_role = 3;';
+$result = mysqli_query($connection, $query);
 while ($user_result = mysqli_fetch_assoc($result)) {
-	echo '<tr><td>1</td><td>';
-	echo $user_result['user_firstname'] . ' ' . $user_result['user_lastname'];
-	echo '</td><td>';
 	$more_result = mysqli_query($connection, "SELECT * FROM orders WHERE user_ID = {$user_result['user_ID']};");
-	echo mysqli_num_rows($more_result);
-	echo '</td></tr>';
+	$totalContribution = 0;
+	$payment =
+	$totalOrderMade = mysqli_num_rows($more_result);
+	array_push($arrayRanking, array('id' => $user_result['user_ID'], 'orderMade' => $totalOrderMade));
+}
+$orderedRanking = $arrayRanking;
+rsort($orderedRanking);
+$i = 0;
+foreach ($arrayRanking as $key => $value) {
+	foreach ($orderedRanking as $ordered_key => $ordered_value) {
+		if ($value === $ordered_value) {
+			$key = $ordered_key;
+			break;
+		}
+	}
+	array_splice($arrayRanking, $i - 1, 1, array(array('id' => $value['id'], 'orderMade' => $value['orderMade'], 'orderRank' => ((int) $key + 1))));
+	$i++;
+}
+unset($orderedRanking);
+foreach ($arrayRanking as $key => $value) {
+	echo '<tr><td>' . $value['id'] . '</td><td>';
+	$user_result = mysqli_query($connection, "SELECT * FROM users WHERE user_ID = {$value['id']};");
+	$user_result = mysqli_fetch_assoc($user_result);
+	echo $user_result['user_firstname'] . ' ' . $user_result['user_lastname'];
+	echo '</td><td>' . $value['orderMade'] . '</td><td>' . $value['orderRank'] . '</td>';
+	echo '</tr>';
 }
 ?>
                 </tbody>
